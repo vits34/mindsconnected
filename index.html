@@ -781,7 +781,13 @@
           'Message:\n' + message
         );
 
-        window.open('mailto:hello@mindsconnected.org?subject=' + subject + '&body=' + body, '_blank');
+        var tempLink = document.createElement('a');
+        tempLink.href = 'mailto:hello@mindsconnected.org?subject=' + subject + '&body=' + body;
+        tempLink.target = '_blank';
+        tempLink.rel = 'noopener noreferrer';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
         successBox.style.display = 'block';
         this.reset();
       });
