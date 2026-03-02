@@ -659,7 +659,27 @@
                 <label for="mc-email" style="display: block; font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 6px;">Email <span style="color:#e84a90;">*</span></label>
                 <input type="email" id="mc-email" placeholder="jane@company.com" required
                   style="width: 100%; padding: 12px 14px; border: 1.5px solid #e0e0e0; border-radius: 8px; font-size: 0.95rem; font-family: inherit; outline: none; box-sizing: border-box; transition: border-color 0.2s;"
-                  onfocus="this.style.borderColor='#e84a90'" onblur="this.style.borderColor='#e0e0e0'">
+                  onfocus="this.style.borderColor='#e84a90'"
+                  onblur="
+                    var v=this.value.trim();
+                    var err=document.getElementById('mc-email-error');
+                    if(v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
+                      this.style.borderColor='#c0392b';
+                      err.style.display='block';
+                    } else {
+                      this.style.borderColor=v?'#2ecc71':'#e0e0e0';
+                      err.style.display='none';
+                    }"
+                  oninput="
+                    var v=this.value.trim();
+                    var err=document.getElementById('mc-email-error');
+                    if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
+                      this.style.borderColor='#2ecc71';
+                      err.style.display='none';
+                    } else if(err.style.display==='block'){
+                      this.style.borderColor='#c0392b';
+                    }">
+                <span id="mc-email-error" style="display:none; font-size:0.8rem; color:#c0392b; margin-top:5px; display:none;">Please enter a valid email address (e.g. jane@company.com)</span>
               </div>
             </div>
 
