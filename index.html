@@ -750,13 +750,16 @@
     <script>
       document.getElementById('mc-contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
+        var form     = this;
         var errorBox = document.getElementById('mc-form-error');
         var successBox = document.getElementById('mc-form-success');
+        var submitBtn  = form.querySelector('button[type="submit"]');
         errorBox.style.display = 'none';
         successBox.style.display = 'none';
 
         var name    = document.getElementById('mc-name').value.trim();
         var email   = document.getElementById('mc-email').value.trim();
+        var company = document.getElementById('mc-company').value.trim();
         var topic   = document.getElementById('mc-topic').value;
         var message = document.getElementById('mc-message').value.trim();
 
@@ -771,25 +774,38 @@
           return;
         }
 
-        var company = document.getElementById('mc-company').value.trim();
-        var subject = encodeURIComponent('Enquiry from ' + name + ' — ' + topic);
-        var body    = encodeURIComponent(
-          'Name: ' + name + '\n' +
-          'Email: ' + email + '\n' +
-          (company ? 'Company: ' + company + '\n' : '') +
-          'Topic: ' + topic + '\n\n' +
-          'Message:\n' + message
-        );
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
 
-        var tempLink = document.createElement('a');
-        tempLink.href = 'mailto:hello@mindsconnected.org?subject=' + subject + '&body=' + body;
-        tempLink.target = '_blank';
-        tempLink.rel = 'noopener noreferrer';
-        document.body.appendChild(tempLink);
-        tempLink.click();
-        document.body.removeChild(tempLink);
-        successBox.style.display = 'block';
-        this.reset();
+        fetch('https://formspree.io/f/mqedvkbz', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            company: company || '—',
+            topic: topic,
+            message: message
+          })
+        })
+        .then(function(res) {
+          if (res.ok) {
+            successBox.style.display = 'block';
+            form.reset();
+          } else {
+            return res.json().then(function(data) {
+              throw new Error(data.error || 'Submission failed.');
+            });
+          }
+        })
+        .catch(function(err) {
+          errorBox.textContent = 'Something went wrong. Please email us directly at hello@mindsconnected.org';
+          errorBox.style.display = 'block';
+        })
+        .finally(function() {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        });
       });
     </script>
   </section>
