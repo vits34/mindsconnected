@@ -12,6 +12,8 @@ if "%MSG%"=="" set MSG=Update website
 
 git commit -m "%MSG%"
 
+git pull --rebase origin master
+
 git push origin master
 
 echo.
