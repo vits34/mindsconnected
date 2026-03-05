@@ -51,6 +51,54 @@
     .mc-reveal-delay-2 { transition-delay: 0.2s; }
     .mc-reveal-delay-3 { transition-delay: 0.3s; }
     .mc-reveal-delay-4 { transition-delay: 0.35s; }
+
+    /* Sticky Header */
+    .u-header {
+      position: fixed !important;
+      top: 0; left: 0; right: 0;
+      z-index: 10000;
+      transition: background 0.35s, box-shadow 0.35s, padding 0.35s;
+    }
+    .u-header.mc-scrolled {
+      background: rgba(255,255,255,0.97) !important;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.10);
+    }
+    .u-header.mc-scrolled .u-sheet-1 { min-height: auto !important; }
+    body { padding-top: 80px; }
+
+    /* FAQ Animation */
+    .mc-faq-list details summary span:last-child {
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+    .mc-faq-list details[open] summary span:last-child {
+      transform: rotate(45deg);
+    }
+    .mc-faq-list details p {
+      overflow: hidden;
+      animation: mc-faq-open 0.35s ease;
+    }
+    @keyframes mc-faq-open {
+      from { opacity: 0; max-height: 0; margin-top: 0; }
+      to { opacity: 1; max-height: 200px; margin-top: 14px; }
+    }
+
+    /* Gradient Separators */
+    .mc-sep {
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #e84a90 30%, #7b5ea7 50%, #e84a90 70%, transparent);
+      border: none;
+      margin: 0;
+      opacity: 0.5;
+    }
+    /* Card Hover Effects */
+    .mc-hover-lift {
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .mc-hover-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+    }
   </style>
   <meta property="og:title" content="Minds Connected">
   <meta property="og:type" content="website">
@@ -63,8 +111,12 @@
   data-home-page-title="Home 1" class="u-body u-xl-mode">
   <header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-header" id="sec-dd13">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-      <a href="#carousel_b893" class="u-image u-logo u-image-1" data-image-width="80" data-image-height="40" aria-label="Minds Connected — back to top">
+      <a href="#carousel_b893" class="u-image u-logo u-image-1" data-image-width="80" data-image-height="40" aria-label="Minds Connected — back to top" style="display: inline-flex; align-items: center; gap: 12px; text-decoration: none;">
         <img src="images/default-logo.png" class="u-logo-image u-logo-image-1" alt="Minds Connected logo">
+        <span class="mc-header-text" style="opacity: 0; transition: opacity 0.35s; pointer-events: none; white-space: nowrap;">
+          <span style="font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem; font-weight: 700; color: #1a1a2e;">Minds Connected</span>
+          <span style="font-family: 'Open Sans', sans-serif; font-size: 0.72rem; color: #888; display: block; margin-top: -2px; letter-spacing: 0.5px;">Co-creating with you</span>
+        </span>
       </a>
 
       <nav class="u-align-left u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="XL">
@@ -166,19 +218,19 @@
   <section class="mc-reveal" style="background: #1a1a2e; padding: 40px 24px;">
     <div style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 0;">
       <div style="flex: 1; min-width: 180px; text-align: center; padding: 16px 24px; border-right: 1px solid #2e2e4a;">
-        <p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 2.4rem; font-weight: 700; color: #e84a90;">10+</p>
+        <p data-mc-count="10" data-mc-suffix="+" style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 2.4rem; font-weight: 700; color: #e84a90;">10+</p>
         <p style="margin: 6px 0 0; font-size: 0.85rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px;">Years of Experience</p>
       </div>
       <div style="flex: 1; min-width: 180px; text-align: center; padding: 16px 24px; border-right: 1px solid #2e2e4a;">
-        <p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 2.4rem; font-weight: 700; color: #e84a90;">100+</p>
+        <p data-mc-count="100" data-mc-suffix="+" style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 2.4rem; font-weight: 700; color: #e84a90;">100+</p>
         <p style="margin: 6px 0 0; font-size: 0.85rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px;">Teams Coached</p>
       </div>
       <div style="flex: 1; min-width: 180px; text-align: center; padding: 16px 24px; border-right: 1px solid #2e2e4a;">
-        <p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 2.4rem; font-weight: 700; color: #e84a90;">1,000+</p>
+        <p data-mc-count="1000" data-mc-suffix="+" style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 2.4rem; font-weight: 700; color: #e84a90;">1,000+</p>
         <p style="margin: 6px 0 0; font-size: 0.85rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px;">People Trained</p>
       </div>
       <div style="flex: 1; min-width: 180px; text-align: center; padding: 16px 24px;">
-        <p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 2.4rem; font-weight: 700; color: #e84a90;">10+</p>
+        <p data-mc-count="10" data-mc-suffix="+" style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 2.4rem; font-weight: 700; color: #e84a90;">10+</p>
         <p style="margin: 6px 0 0; font-size: 0.85rem; color: #aaa; text-transform: uppercase; letter-spacing: 1px;">Countries</p>
       </div>
     </div>
@@ -260,6 +312,8 @@
       </div>
     </div>
   </section>
+
+  <div class="mc-sep"></div>
 
   <section class="u-align-center u-clearfix u-white u-section-2" id="carousel_b13d">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -372,7 +426,7 @@
 				Providing teams ways to structure work, collaborate and communicate, while developing a culture that everyone loves to be in.<br>
       </p>
       <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 24px 0 32px; text-align: left;">
-        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 220px; max-width: 260px; background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
+        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 220px; max-width: 260px; background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 36px rgba(0,0,0,0.12)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <p style="margin: 0 0 6px; font-weight: 700; color: #1a1a2e; font-size: 0.9rem;">Who it's for</p>
           <ul style="margin: 0; padding-left: 18px; color: #555; font-size: 0.875rem; line-height: 1.8;">
             <li>Teams needing guidance</li>
@@ -380,7 +434,7 @@
             <li>Organisations building Agile culture</li>
           </ul>
         </div>
-        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 220px; max-width: 260px; background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
+        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 220px; max-width: 260px; background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 36px rgba(0,0,0,0.12)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <p style="margin: 0 0 6px; font-weight: 700; color: #1a1a2e; font-size: 0.9rem;">What we deliver</p>
           <ul style="margin: 0; padding-left: 18px; color: #555; font-size: 0.875rem; line-height: 1.8;">
             <li>Scrum, Kanban &amp; SAFe coaching</li>
@@ -388,7 +442,7 @@
             <li>Team health checks & improvements</li>
           </ul>
         </div>
-        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 220px; max-width: 260px; background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
+        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 220px; max-width: 260px; background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 36px rgba(0,0,0,0.12)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <p style="margin: 0 0 6px; font-weight: 700; color: #1a1a2e; font-size: 0.9rem;">Expected outcomes</p>
           <ul style="margin: 0; padding-left: 18px; color: #555; font-size: 0.875rem; line-height: 1.8;">
             <li>Faster, more focused teams</li>
@@ -475,7 +529,7 @@
         <p style="color: #aaa; font-size: 1rem; max-width: 620px; margin: 0 auto; line-height: 1.7;">From organisation-wide Agile programmes for 500+ employees to intimate leadership workshops — we design and deliver engaging learning experiences that create lasting change.</p>
       </div>
       <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 40px;">
-        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 220px; max-width: 280px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
+        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 220px; max-width: 280px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; transition: transform 0.3s, background 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.background='rgba(255,255,255,0.09)'" onmouseout="this.style.transform=''; this.style.background=''">
           <p style="margin: 0 0 10px; font-weight: 700; color: #e84a90; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;">Who it's for</p>
           <ul style="margin: 0; padding-left: 18px; color: #bbb; font-size: 0.875rem; line-height: 2;">
             <li>Teams new to Agile</li>
@@ -484,7 +538,7 @@
             <li>Release Train Engineers</li>
           </ul>
         </div>
-        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 220px; max-width: 280px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
+        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 220px; max-width: 280px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; transition: transform 0.3s, background 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.background='rgba(255,255,255,0.09)'" onmouseout="this.style.transform=''; this.style.background=''">
           <p style="margin: 0 0 10px; font-weight: 700; color: #e84a90; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;">What we deliver</p>
           <ul style="margin: 0; padding-left: 18px; color: #bbb; font-size: 0.875rem; line-height: 2;">
             <li>Scrum, Kanban &amp; SAFe training</li>
@@ -494,7 +548,7 @@
             <li>Retrospectives &amp; team alignment</li>
           </ul>
         </div>
-        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 220px; max-width: 280px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
+        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 220px; max-width: 280px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px; transition: transform 0.3s, background 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.background='rgba(255,255,255,0.09)'" onmouseout="this.style.transform=''; this.style.background=''">
           <p style="margin: 0 0 10px; font-weight: 700; color: #e84a90; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;">Expected outcomes</p>
           <ul style="margin: 0; padding-left: 18px; color: #bbb; font-size: 0.875rem; line-height: 2;">
             <li>Shared Agile language across the org</li>
@@ -538,6 +592,8 @@
       </div>
     </div>
   </section>
+
+  <div class="mc-sep"></div>
 
   <section class="u-align-center u-clearfix u-gradient u-section-5" id="carousel_42c4">
     <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
@@ -729,6 +785,9 @@
       </div>
     </div>
   </section>
+
+  <div class="mc-sep"></div>
+
   <!-- Impactful Stories / Case Studies -->
   <section style="background: #f7f7fb; padding: 80px 24px;">
     <div style="max-width: 1060px; margin: 0 auto;">
@@ -740,7 +799,7 @@
       <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;">
 
         <!-- Story 1 -->
-        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 280px; max-width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); overflow: hidden;">
+        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 280px; max-width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 16px 40px rgba(0,0,0,0.14)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <div style="background: linear-gradient(135deg, #e84a90, #c0356e); padding: 24px 28px;">
             <p style="margin: 0 0 6px; font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px;">Story 01</p>
             <h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.4;">Sprint Cancellation That Transformed Team Ownership</h3>
@@ -762,7 +821,7 @@
         </div>
 
         <!-- Story 2 -->
-        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 280px; max-width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); overflow: hidden;">
+        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 280px; max-width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 16px 40px rgba(0,0,0,0.14)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <div style="background: linear-gradient(135deg, #1a1a2e, #2e2e50); padding: 24px 28px;">
             <p style="margin: 0 0 6px; font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 2px;">Story 02</p>
             <h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.4;">Executive–Product Owner Alignment</h3>
@@ -784,7 +843,7 @@
         </div>
 
         <!-- Story 3 -->
-        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 280px; max-width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); overflow: hidden;">
+        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 280px; max-width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 16px 40px rgba(0,0,0,0.14)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <div style="background: linear-gradient(135deg, #e84a90, #c0356e); padding: 24px 28px;">
             <p style="margin: 0 0 6px; font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px;">Story 03</p>
             <h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.4;">OKR Implementation at Scale</h3>
@@ -808,6 +867,8 @@
       </div>
     </div>
   </section>
+
+  <div class="mc-sep"></div>
 
   <section style="background: #fff; padding: 80px 24px;" id="carousel_67e8">
     <div style="max-width: 900px; margin: 0 auto; text-align: center;">
@@ -855,6 +916,9 @@
       </div>
     </div>
   </section>
+
+  <div class="mc-sep"></div>
+
   <!-- Testimonials -->
   <section style="background: #1a1a2e; padding: 80px 24px;">
     <div style="max-width: 1100px; margin: 0 auto;">
@@ -866,7 +930,7 @@
       <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
 
         <!-- Testimonial 1 — Team -->
-        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative;">
+        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative; transition: transform 0.3s, box-shadow 0.3s, background 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.background='rgba(255,255,255,0.09)'" onmouseout="this.style.transform=''; this.style.background=''">
           <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #e84a90; opacity: 0.4; margin-bottom: 12px;"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
           <p style="margin: 0 0 20px; color: #ddd; font-size: 0.9rem; line-height: 1.7; font-style: italic;">"This team were brought in to help improve and de-risk a complex development program. They very quickly grasped the key challenges and root causes and provided clear solutions."</p>
           <div style="display: flex; align-items: center; gap: 12px;">
@@ -879,7 +943,7 @@
         </div>
 
         <!-- Testimonial 2 — Team -->
-        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative;">
+        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative; transition: transform 0.3s, box-shadow 0.3s, background 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.background='rgba(255,255,255,0.09)'" onmouseout="this.style.transform=''; this.style.background=''">
           <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #e84a90; opacity: 0.4; margin-bottom: 12px;"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
           <p style="margin: 0 0 20px; color: #ddd; font-size: 0.9rem; line-height: 1.7; font-style: italic;">"Guided professionals across 29 diverse countries in Europe and Africa, this team effortlessly bridged cultural differences, turning them into strengths rather than obstacles."</p>
           <div style="display: flex; align-items: center; gap: 12px;">
@@ -892,7 +956,7 @@
         </div>
 
         <!-- Testimonial 3 — Team -->
-        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative;">
+        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative; transition: transform 0.3s, box-shadow 0.3s, background 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.background='rgba(255,255,255,0.09)'" onmouseout="this.style.transform=''; this.style.background=''">
           <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #e84a90; opacity: 0.4; margin-bottom: 12px;"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
           <p style="margin: 0 0 20px; color: #ddd; font-size: 0.9rem; line-height: 1.7; font-style: italic;">"These guys facilitated an amazing retrospective and tailored agile training for the entire executive division as part of our learning."</p>
           <div style="display: flex; align-items: center; gap: 12px;">
@@ -905,7 +969,7 @@
         </div>
 
         <!-- Testimonial 4 — Vitor -->
-        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative;">
+        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative; transition: transform 0.3s, box-shadow 0.3s, background 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.background='rgba(255,255,255,0.09)'" onmouseout="this.style.transform=''; this.style.background=''">
           <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #e84a90; opacity: 0.4; margin-bottom: 12px;"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
           <p style="margin: 0 0 20px; color: #ddd; font-size: 0.9rem; line-height: 1.7; font-style: italic;">"Vit is a superb Scrum Master and Agile Coach who would be an asset to any company. His affable personality, passion, expertise and willingness to put the needs of others first meant teams stopped 'doing' Agile and started 'being' Agile. If you are looking for an Agile coach then look no further."</p>
           <div style="display: flex; align-items: center; gap: 12px;">
@@ -918,7 +982,7 @@
         </div>
 
         <!-- Testimonial 5 — Kwasi -->
-        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative;">
+        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative; transition: transform 0.3s, box-shadow 0.3s, background 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.background='rgba(255,255,255,0.09)'" onmouseout="this.style.transform=''; this.style.background=''">
           <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #e84a90; opacity: 0.4; margin-bottom: 12px;"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
           <p style="margin: 0 0 20px; color: #ddd; font-size: 0.9rem; line-height: 1.7; font-style: italic;">"Kwasi is one of the most passionate, enthusiastic, positive people I have ever met. He is an agile evangelist but he always balances his beliefs against real life and pragmatism, focussing always on the outcome, not just the method."</p>
           <div style="display: flex; align-items: center; gap: 12px;">
@@ -931,7 +995,7 @@
         </div>
 
         <!-- Testimonial 6 — Kwasi -->
-        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative;">
+        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative; transition: transform 0.3s, box-shadow 0.3s, background 0.3s;" onmouseover="this.style.transform='translateY(-6px)'; this.style.background='rgba(255,255,255,0.09)'" onmouseout="this.style.transform=''; this.style.background=''">
           <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #e84a90; opacity: 0.4; margin-bottom: 12px;"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
           <p style="margin: 0 0 20px; color: #ddd; font-size: 0.9rem; line-height: 1.7; font-style: italic;">"I had the pleasure of working with Kwasi during our conversion from waterfall to agile. The strength and depth of his knowledge and expertise in all things Agile is vast. He has the ability to communicate across all levels and is tireless in assisting teams in getting to where they want to be."</p>
           <div style="display: flex; align-items: center; gap: 12px;">
@@ -947,6 +1011,8 @@
     </div>
   </section>
 
+  <div class="mc-sep"></div>
+
   <!-- FAQ -->
   <section style="background: #f7f7fb; padding: 80px 24px;">
     <div style="max-width: 720px; margin: 0 auto;">
@@ -955,7 +1021,7 @@
 
       <div class="mc-faq-list">
 
-        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <summary style="font-weight: 700; color: #1a1a2e; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             How long does a typical engagement take?
             <span style="font-size: 1.4rem; color: #e84a90; flex-shrink: 0; margin-left: 12px;">+</span>
@@ -963,7 +1029,7 @@
           <p style="margin: 14px 0 0; color: #555; font-size: 0.9rem; line-height: 1.7;">Engagements range from a focused 4-week sprint to multi-year transformation partnerships. We always start with a discovery session to scope the right approach for your situation.</p>
         </details>
 
-        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <summary style="font-weight: 700; color: #1a1a2e; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             Do you work remotely or on-site?
             <span style="font-size: 1.4rem; color: #e84a90; flex-shrink: 0; margin-left: 12px;">+</span>
@@ -971,7 +1037,7 @@
           <p style="margin: 14px 0 0; color: #555; font-size: 0.9rem; line-height: 1.7;">Both. We are fully remote-capable and have worked with clients across multiple continents. We also love getting on-site when the situation calls for it — real collaboration happens everywhere.</p>
         </details>
 
-        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <summary style="font-weight: 700; color: #1a1a2e; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             Do you work with companies of all sizes?
             <span style="font-size: 1.4rem; color: #e84a90; flex-shrink: 0; margin-left: 12px;">+</span>
@@ -979,7 +1045,7 @@
           <p style="margin: 14px 0 0; color: #555; font-size: 0.9rem; line-height: 1.7;">Yes. We work with startups finding product-market fit, mid-sized companies scaling their teams, and large enterprises navigating complex transformations. The approach adapts — the commitment doesn't.</p>
         </details>
 
-        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <summary style="font-weight: 700; color: #1a1a2e; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             How do we get started?
             <span style="font-size: 1.4rem; color: #e84a90; flex-shrink: 0; margin-left: 12px;">+</span>
@@ -987,7 +1053,7 @@
           <p style="margin: 14px 0 0; color: #555; font-size: 0.9rem; line-height: 1.7;">Simply reach out via our contact form or email. We'll schedule a no-obligation discovery call to understand your needs and see if we're the right fit for each other.</p>
         </details>
 
-        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 24px rgba(0,0,0,0.10)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
           <summary style="font-weight: 700; color: #1a1a2e; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             What makes Minds Connected different?
             <span style="font-size: 1.4rem; color: #e84a90; flex-shrink: 0; margin-left: 12px;">+</span>
@@ -999,9 +1065,9 @@
     </div>
   </section>
 
-  <section class="u-align-center u-clearfix u-grey-10 u-section-9" id="carousel_13fe" style="padding: 80px 20px;">
-    <div class="u-expanded-width u-gradient u-shape u-shape-rectangle u-shape-1"></div>
+  <div class="mc-sep"></div>
 
+  <section class="u-align-center u-clearfix u-grey-10 u-section-9" id="carousel_13fe" style="padding: 80px 20px;">
     <div style="max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;">
       <h2 style="font-family: 'Bai Jamjuree', sans-serif; font-size: 2.2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 12px;">Get in Touch</h2>
       <p style="color: #555; font-size: 1.05rem; max-width: 560px; margin: 0 auto 50px; line-height: 1.7;">Tell us about your challenge. We review every message personally and will get back to you within 24 hours.</p>
@@ -1286,6 +1352,55 @@
         });
       }, { threshold: 0.15 });
       els.forEach(function(el) { observer.observe(el); });
+    })();
+  </script>
+
+  <!-- Sticky Header -->
+  <script>
+    (function() {
+      var header = document.querySelector('.u-header');
+      var headerText = document.querySelector('.mc-header-text');
+      if (!header) return;
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 60) {
+          header.classList.add('mc-scrolled');
+          if (headerText) headerText.style.opacity = '1';
+        } else {
+          header.classList.remove('mc-scrolled');
+          if (headerText) headerText.style.opacity = '0';
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+  <!-- Animated Stat Counters -->
+  <script>
+    (function() {
+      var counters = document.querySelectorAll('[data-mc-count]');
+      if (!counters.length || !('IntersectionObserver' in window)) return;
+      function animateCount(el) {
+        var target = parseInt(el.getAttribute('data-mc-count'), 10);
+        var suffix = el.getAttribute('data-mc-suffix') || '';
+        var duration = 1600;
+        var start = performance.now();
+        function step(now) {
+          var progress = Math.min((now - start) / duration, 1);
+          var ease = 1 - Math.pow(1 - progress, 3);
+          var current = Math.round(ease * target);
+          el.textContent = current.toLocaleString() + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(function(el) { obs.observe(el); });
     })();
   </script>
 
