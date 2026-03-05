@@ -35,6 +35,23 @@
 		"sameAs": ["https://www.linkedin.com/company/mindsconnected/"]
 }</script>
   <meta name="theme-color" content="#e84a90">
+
+  <!-- Scroll Animations -->
+  <style>
+    .mc-reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .mc-reveal.mc-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .mc-reveal-delay-1 { transition-delay: 0.1s; }
+    .mc-reveal-delay-2 { transition-delay: 0.2s; }
+    .mc-reveal-delay-3 { transition-delay: 0.3s; }
+    .mc-reveal-delay-4 { transition-delay: 0.35s; }
+  </style>
   <meta property="og:title" content="Minds Connected">
   <meta property="og:type" content="website">
   <meta property="og:description" content="Minds Connected is a boutique consulting firm specialising in Agile coaching, OKR implementation, strategic planning, and product management to help your business transform and grow.">
@@ -146,7 +163,7 @@
     </div>
   </section>
   <!-- Stats Bar -->
-  <section style="background: #1a1a2e; padding: 40px 24px;">
+  <section class="mc-reveal" style="background: #1a1a2e; padding: 40px 24px;">
     <div style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 0;">
       <div style="flex: 1; min-width: 180px; text-align: center; padding: 16px 24px; border-right: 1px solid #2e2e4a;">
         <p style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 2.4rem; font-weight: 700; color: #e84a90;">10+</p>
@@ -168,7 +185,7 @@
   </section>
 
   <!-- Certifications Strip -->
-  <section style="background: #fff; padding: 36px 24px; border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0;">
+  <section class="mc-reveal" style="background: #fff; padding: 36px 24px; border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0;">
     <div style="max-width: 900px; margin: 0 auto; text-align: center;">
       <p style="margin: 0 0 20px; font-size: 0.75rem; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 2px;">Certifications &amp; Credentials</p>
       <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px;">
@@ -197,7 +214,7 @@
   </section>
 
   <!-- Industries Strip -->
-  <section style="background: #f7f7fb; padding: 28px 24px; border-bottom: 1px solid #ebebf0;">
+  <section class="mc-reveal" style="background: #f7f7fb; padding: 28px 24px; border-bottom: 1px solid #ebebf0;">
     <div style="max-width: 900px; margin: 0 auto; text-align: center;">
       <p style="margin: 0 0 16px; font-size: 0.75rem; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 2px;">Industries we've worked across</p>
       <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 0; color: #555; font-size: 0.875rem; font-weight: 500;">
@@ -209,6 +226,37 @@
         <span style="padding: 0 14px; border-right: 1px solid #d0d0d0;">Travel &amp; Hospitality</span>
         <span style="padding: 0 14px; border-right: 1px solid #d0d0d0;">Logistics</span>
         <span style="padding: 0 14px;">Financial Services</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted By — Client Logos -->
+  <section class="mc-reveal" style="background: #fff; padding: 48px 24px; border-bottom: 1px solid #f0f0f0;">
+    <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+      <p style="margin: 0 0 28px; font-size: 0.75rem; font-weight: 700; color: #aaa; text-transform: uppercase; letter-spacing: 2px;">Trusted by teams at</p>
+      <style>
+        .mc-logo-strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 32px 40px; }
+        .mc-logo-strip .mc-logo-item { display: flex; align-items: center; justify-content: center; opacity: 0.45; transition: opacity 0.3s; }
+        .mc-logo-strip .mc-logo-item:hover { opacity: 0.85; }
+        .mc-logo-strip .mc-logo-item img { height: 28px; width: auto; }
+        .mc-logo-strip .mc-logo-text { font-family: 'Bai Jamjuree', sans-serif; font-size: 1.05rem; font-weight: 700; color: #1a1a2e; letter-spacing: 0.5px; white-space: nowrap; }
+      </style>
+      <div class="mc-logo-strip">
+        <div class="mc-logo-item"><img src="images/logos/adidas.svg" alt="Adidas" style="height: 32px;"></div>
+        <div class="mc-logo-item"><img src="images/logos/vodafone.svg" alt="Vodafone" style="height: 26px;"></div>
+        <div class="mc-logo-item"><img src="images/logos/cocacola.svg" alt="Coca-Cola" style="height: 24px;"></div>
+        <div class="mc-logo-item"><span class="mc-logo-text">BP</span></div>
+        <div class="mc-logo-item"><img src="images/logos/symantec.svg" alt="Symantec" style="height: 26px;"></div>
+        <div class="mc-logo-item"><img src="images/logos/leroymerlin.svg" alt="Leroy Merlin" style="height: 28px;"></div>
+        <div class="mc-logo-item"><span class="mc-logo-text">BCG</span></div>
+        <div class="mc-logo-item"><span class="mc-logo-text">CDK Global</span></div>
+        <div class="mc-logo-item"><span class="mc-logo-text">University of Oregon</span></div>
+        <div class="mc-logo-item"><span class="mc-logo-text">Hostelworld</span></div>
+        <div class="mc-logo-item"><span class="mc-logo-text">Hampshire Trust Bank</span></div>
+        <div class="mc-logo-item"><span class="mc-logo-text">Cirium</span></div>
+        <div class="mc-logo-item"><span class="mc-logo-text">NMBRS</span></div>
+        <div class="mc-logo-item"><span class="mc-logo-text">Bling Energy</span></div>
+        <div class="mc-logo-item"><span class="mc-logo-text">DA Systems</span></div>
       </div>
     </div>
   </section>
@@ -324,7 +372,7 @@
 				Providing teams ways to structure work, collaborate and communicate, while developing a culture that everyone loves to be in.<br>
       </p>
       <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 24px 0 32px; text-align: left;">
-        <div style="flex: 1; min-width: 220px; max-width: 260px; background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
+        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 220px; max-width: 260px; background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
           <p style="margin: 0 0 6px; font-weight: 700; color: #1a1a2e; font-size: 0.9rem;">Who it's for</p>
           <ul style="margin: 0; padding-left: 18px; color: #555; font-size: 0.875rem; line-height: 1.8;">
             <li>Teams needing guidance</li>
@@ -332,7 +380,7 @@
             <li>Organisations building Agile culture</li>
           </ul>
         </div>
-        <div style="flex: 1; min-width: 220px; max-width: 260px; background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
+        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 220px; max-width: 260px; background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
           <p style="margin: 0 0 6px; font-weight: 700; color: #1a1a2e; font-size: 0.9rem;">What we deliver</p>
           <ul style="margin: 0; padding-left: 18px; color: #555; font-size: 0.875rem; line-height: 1.8;">
             <li>Scrum, Kanban &amp; SAFe coaching</li>
@@ -340,7 +388,7 @@
             <li>Team health checks & improvements</li>
           </ul>
         </div>
-        <div style="flex: 1; min-width: 220px; max-width: 260px; background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
+        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 220px; max-width: 260px; background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
           <p style="margin: 0 0 6px; font-weight: 700; color: #1a1a2e; font-size: 0.9rem;">Expected outcomes</p>
           <ul style="margin: 0; padding-left: 18px; color: #555; font-size: 0.875rem; line-height: 1.8;">
             <li>Faster, more focused teams</li>
@@ -427,7 +475,7 @@
         <p style="color: #aaa; font-size: 1rem; max-width: 620px; margin: 0 auto; line-height: 1.7;">From organisation-wide Agile programmes for 500+ employees to intimate leadership workshops — we design and deliver engaging learning experiences that create lasting change.</p>
       </div>
       <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 40px;">
-        <div style="flex: 1; min-width: 220px; max-width: 280px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
+        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 220px; max-width: 280px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
           <p style="margin: 0 0 10px; font-weight: 700; color: #e84a90; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;">Who it's for</p>
           <ul style="margin: 0; padding-left: 18px; color: #bbb; font-size: 0.875rem; line-height: 2;">
             <li>Teams new to Agile</li>
@@ -436,7 +484,7 @@
             <li>Release Train Engineers</li>
           </ul>
         </div>
-        <div style="flex: 1; min-width: 220px; max-width: 280px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
+        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 220px; max-width: 280px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
           <p style="margin: 0 0 10px; font-weight: 700; color: #e84a90; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;">What we deliver</p>
           <ul style="margin: 0; padding-left: 18px; color: #bbb; font-size: 0.875rem; line-height: 2;">
             <li>Scrum, Kanban &amp; SAFe training</li>
@@ -446,7 +494,7 @@
             <li>Retrospectives &amp; team alignment</li>
           </ul>
         </div>
-        <div style="flex: 1; min-width: 220px; max-width: 280px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
+        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 220px; max-width: 280px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
           <p style="margin: 0 0 10px; font-weight: 700; color: #e84a90; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;">Expected outcomes</p>
           <ul style="margin: 0; padding-left: 18px; color: #bbb; font-size: 0.875rem; line-height: 2;">
             <li>Shared Agile language across the org</li>
@@ -467,22 +515,22 @@
       <h2 style="font-family: 'Bai Jamjuree', sans-serif; font-size: 2rem; font-weight: 700; color: #1a1a2e; margin-bottom: 12px;">How We Work</h2>
       <p style="color: #555; font-size: 1rem; max-width: 520px; margin: 0 auto 56px; line-height: 1.7;">A simple, human process — designed around you.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 0; justify-content: center; position: relative;">
-        <div style="flex: 1; min-width: 200px; max-width: 240px; padding: 0 16px 40px; position: relative;">
+        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 200px; max-width: 240px; padding: 0 16px 40px; position: relative;">
           <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #e84a90, #c0356e); color: #fff; font-family: 'Bai Jamjuree', sans-serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">1</div>
           <h4 style="font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem; font-weight: 700; color: #1a1a2e; margin: 0 0 10px;">Listen</h4>
           <p style="color: #666; font-size: 0.875rem; line-height: 1.7; margin: 0;">We start by deeply understanding your business, culture, and challenges through workshops and open conversations.</p>
         </div>
-        <div style="flex: 1; min-width: 200px; max-width: 240px; padding: 0 16px 40px;">
+        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 200px; max-width: 240px; padding: 0 16px 40px;">
           <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #e84a90, #c0356e); color: #fff; font-family: 'Bai Jamjuree', sans-serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">2</div>
           <h4 style="font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem; font-weight: 700; color: #1a1a2e; margin: 0 0 10px;">Co-create</h4>
           <p style="color: #666; font-size: 0.875rem; line-height: 1.7; margin: 0;">Together we design the right approach, tools, and frameworks tailored to your specific context and goals.</p>
         </div>
-        <div style="flex: 1; min-width: 200px; max-width: 240px; padding: 0 16px 40px;">
+        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 200px; max-width: 240px; padding: 0 16px 40px;">
           <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #e84a90, #c0356e); color: #fff; font-family: 'Bai Jamjuree', sans-serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">3</div>
           <h4 style="font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem; font-weight: 700; color: #1a1a2e; margin: 0 0 10px;">Execute</h4>
           <p style="color: #666; font-size: 0.875rem; line-height: 1.7; margin: 0;">We work alongside your teams to implement change, coach leaders, and build lasting capabilities from within.</p>
         </div>
-        <div style="flex: 1; min-width: 200px; max-width: 240px; padding: 0 16px 40px;">
+        <div class="mc-reveal mc-reveal-delay-4" style="flex: 1; min-width: 200px; max-width: 240px; padding: 0 16px 40px;">
           <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #e84a90, #c0356e); color: #fff; font-family: 'Bai Jamjuree', sans-serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">4</div>
           <h4 style="font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem; font-weight: 700; color: #1a1a2e; margin: 0 0 10px;">Grow</h4>
           <p style="color: #666; font-size: 0.875rem; line-height: 1.7; margin: 0;">We measure outcomes, celebrate progress, and ensure your organisation continues to thrive long after we're done.</p>
@@ -681,81 +729,6 @@
       </div>
     </div>
   </section>
-  <section class="u-clearfix u-grey-10 u-section-6" id="sec-0f57">
-    <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
-      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-size-21">
-              <div class="u-layout-col">
-                <div
-                  class="u-container-style u-hidden-sm u-hidden-xs u-layout-cell u-left-cell u-size-20 u-size-30-md u-layout-cell-1">
-                  <div class="u-container-layout u-container-layout-1"></div>
-                </div>
-                <div class="u-container-style u-image u-layout-cell u-left-cell u-size-20 u-size-30-md u-image-1"
-                  data-image-width="800" data-image-height="855">
-                  <div class="u-container-layout u-container-layout-2"></div>
-                </div>
-                <div
-                  class="u-container-style u-hidden-sm u-hidden-xs u-layout-cell u-left-cell u-size-20 u-size-60-md u-layout-cell-3">
-                  <div class="u-container-layout u-container-layout-3"></div>
-                </div>
-              </div>
-            </div>
-            <div class="u-size-19">
-              <div class="u-layout-col">
-                <div class="u-container-style u-layout-cell u-size-30 u-white u-layout-cell-4">
-                  <div class="u-container-layout u-valign-middle u-container-layout-4">
-                    <h3 class="u-text u-text-default u-text-1">Our Work</h3>
-                    <p class="u-text u-text-2">We choose both clients and partners based on their eagerness to learn, to
-                      grow and to bring themselves and us to the next level.</p>
-
-                  </div>
-                </div>
-                <div class="u-container-style u-image u-layout-cell u-size-30 u-image-2">
-                  <div class="u-container-layout u-container-layout-5"></div>
-                </div>
-              </div>
-            </div>
-            <div class="u-size-20">
-              <div class="u-layout-col">
-                <div class="u-container-style u-layout-cell u-right-cell u-size-20 u-size-30-md u-layout-cell-6">
-                  <div
-                    class="u-container-layout u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-6">
-                    <img class="u-expanded-width u-image u-image-3" loading="lazy"
-                      src="images/44d5d282-18f7-4295-9493-b2865af9bf3d.jpg" data-image-width="1000"
-                      data-image-height="876">
-                  </div>
-                </div>
-                <div
-                  class="u-container-style u-gradient u-layout-cell u-right-cell u-size-20 u-size-30-md u-layout-cell-7">
-                  <div class="u-container-layout u-valign-middle u-container-layout-7"><span
-                      class="u-icon u-icon-circle u-text-white u-icon-1"><svg class="u-svg-link"
-                        preserveAspectRatio="xMidYMin slice" viewBox="0 -42 426.66667 426" style="">
-                        <use xlink:href="#svg-fbf5"></use>
-                      </svg><svg class="u-svg-content" viewBox="0 -42 426.66667 426" id="svg-fbf5">
-                        <path
-                          d="m373.332031.332031h-64c-29.417969 0-53.332031 23.9375-53.332031 53.335938v64c0 29.394531 23.914062 53.332031 53.332031 53.332031h64c3.648438 0 7.210938-.382812 10.667969-1.089844v43.757813c0 47.058593-38.273438 85.332031-85.332031 85.332031h-21.335938c-11.796875 0-21.332031 9.558594-21.332031 21.332031 0 11.777344 9.535156 21.335938 21.332031 21.335938h21.335938c70.589843 0 128-57.410157 128-128v-160c0-29.398438-23.914063-53.335938-53.335938-53.335938zm0 0">
-                        </path>
-                        <path
-                          d="m117.332031.332031h-64c-29.417969 0-53.332031 23.9375-53.332031 53.335938v64c0 29.394531 23.914062 53.332031 53.332031 53.332031h64c3.648438 0 7.210938-.382812 10.667969-1.089844v43.757813c0 47.058593-38.273438 85.332031-85.332031 85.332031h-21.335938c-11.796875 0-21.332031 9.558594-21.332031 21.332031 0 11.777344 9.535156 21.335938 21.332031 21.335938h21.335938c70.589843 0 128-57.410157 128-128v-160c0-29.398438-23.914063-53.335938-53.335938-53.335938zm0 0">
-                        </path>
-                      </svg></span>
-                    <h3 class="u-text u-text-body-alt-color u-text-default u-text-4">Close collaboration is the key to
-                      success.&nbsp;</h3>
-                  </div>
-                </div>
-                <div
-                  class="u-container-style u-hidden-sm u-hidden-xs u-layout-cell u-right-cell u-size-20 u-size-60-md u-layout-cell-8">
-                  <div class="u-container-layout u-container-layout-8"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- Impactful Stories / Case Studies -->
   <section style="background: #f7f7fb; padding: 80px 24px;">
     <div style="max-width: 1060px; margin: 0 auto;">
@@ -767,7 +740,7 @@
       <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center;">
 
         <!-- Story 1 -->
-        <div style="flex: 1; min-width: 280px; max-width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); overflow: hidden;">
+        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 280px; max-width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); overflow: hidden;">
           <div style="background: linear-gradient(135deg, #e84a90, #c0356e); padding: 24px 28px;">
             <p style="margin: 0 0 6px; font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px;">Story 01</p>
             <h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.4;">Sprint Cancellation That Transformed Team Ownership</h3>
@@ -789,7 +762,7 @@
         </div>
 
         <!-- Story 2 -->
-        <div style="flex: 1; min-width: 280px; max-width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); overflow: hidden;">
+        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 280px; max-width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); overflow: hidden;">
           <div style="background: linear-gradient(135deg, #1a1a2e, #2e2e50); padding: 24px 28px;">
             <p style="margin: 0 0 6px; font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 2px;">Story 02</p>
             <h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.4;">Executive–Product Owner Alignment</h3>
@@ -811,7 +784,7 @@
         </div>
 
         <!-- Story 3 -->
-        <div style="flex: 1; min-width: 280px; max-width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); overflow: hidden;">
+        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 280px; max-width: 320px; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); overflow: hidden;">
           <div style="background: linear-gradient(135deg, #e84a90, #c0356e); padding: 24px 28px;">
             <p style="margin: 0 0 6px; font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px;">Story 03</p>
             <h3 style="margin: 0; font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.4;">OKR Implementation at Scale</h3>
@@ -836,36 +809,144 @@
     </div>
   </section>
 
-  <section class="u-clearfix u-white u-section-8" id="carousel_67e8">
-    <div class="u-clearfix u-sheet u-valign-middle-md u-sheet-1">
-      <div class="u-gradient u-shape u-shape-rectangle u-shape-1"></div>
-      <div class="u-gallery u-layout-grid u-lightbox u-no-transition u-show-text-on-hover u-gallery-1">
-        <div class="u-gallery-inner u-gallery-inner-1" style="grid-template-columns: repeat(2, 1fr);">
-          <div class="u-effect-fade u-gallery-item" style="aspect-ratio: 1; overflow: hidden; border-radius: 50%;">
-            <div class="u-back-slide" data-image-width="626" data-image-height="626" style="height: 100%;">
-              <a href="https://www.linkedin.com/in/vit-hen/" target="_blank" rel="noopener noreferrer">
-                <img class="u-back-image u-expanded" loading="lazy" src="images/vitor2.png" style="object-position: top;">
-              </a>
-            </div>
-          </div>
-          <div class="u-effect-fade u-gallery-item" style="aspect-ratio: 1; overflow: hidden; border-radius: 50%;">
-            <div class="u-back-slide" data-image-width="626" data-image-height="626" style="height: 100%;">
-              <a href="https://www.linkedin.com/in/kwasiowusuasomaning/" target="_blank" rel="noopener noreferrer">
-                <img class="u-back-image u-expanded" loading="lazy" src="images/kwasi.jpg" style="object-position: top;">
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-align-left u-container-style u-group u-white u-group-1">
-        <div class="u-container-layout u-container-layout-1">
-          <h2 class="u-text u-text-1">Our Team</h2>
-          <p class="u-text u-text-2">Meet the team of experts that will help navigate new waters with you.&nbsp;</p>
+  <section style="background: #fff; padding: 80px 24px;" id="carousel_67e8">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+      <h2 class="mc-reveal" style="font-family: 'Bai Jamjuree', sans-serif; font-size: 2rem; font-weight: 700; color: #1a1a2e; margin: 0 0 12px;">Our Team</h2>
+      <p class="mc-reveal" style="color: #555; font-size: 1rem; max-width: 480px; margin: 0 auto 56px; line-height: 1.7;">Meet the team of experts that will help navigate new waters with you.</p>
 
+      <div style="display: flex; flex-wrap: wrap; gap: 48px; justify-content: center;">
+
+        <!-- Vitor -->
+        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 260px; max-width: 340px; text-align: center;">
+          <a href="https://www.linkedin.com/in/vit-hen/" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none;">
+            <div style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; margin: 0 auto 24px; box-shadow: 0 8px 30px rgba(232,74,144,0.18); transition: transform 0.3s, box-shadow 0.3s;"
+              onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 40px rgba(232,74,144,0.28)'"
+              onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 30px rgba(232,74,144,0.18)'">
+              <img src="images/vitor2.png" alt="Vitor Henriques" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+            </div>
+          </a>
+          <h3 style="font-family: 'Bai Jamjuree', sans-serif; font-size: 1.25rem; font-weight: 700; color: #1a1a2e; margin: 0 0 4px;">Vitor Henriques</h3>
+          <p style="margin: 0 0 12px; font-size: 0.85rem; font-weight: 600; color: #e84a90; text-transform: uppercase; letter-spacing: 1px;">Agility Coach</p>
+          <p style="margin: 0 0 16px; font-size: 0.9rem; color: #555; line-height: 1.6;">People-oriented with a tech brain</p>
+          <a href="https://www.linkedin.com/in/vit-hen/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #0a66c2; text-decoration: none; font-weight: 600; transition: opacity 0.2s;"
+            onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+            <img src="images/linkedinlogo_blue.png" width="16" height="16" alt="LinkedIn"> Connect
+          </a>
         </div>
+
+        <!-- Kwasi -->
+        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 260px; max-width: 340px; text-align: center;">
+          <a href="https://www.linkedin.com/in/kwasiowusuasomaning/" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none;">
+            <div style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; margin: 0 auto 24px; box-shadow: 0 8px 30px rgba(232,74,144,0.18); transition: transform 0.3s, box-shadow 0.3s;"
+              onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 12px 40px rgba(232,74,144,0.28)'"
+              onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 8px 30px rgba(232,74,144,0.18)'">
+              <img src="images/kwasi.jpg" alt="Kwasi Owusu-Asomaning" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+            </div>
+          </a>
+          <h3 style="font-family: 'Bai Jamjuree', sans-serif; font-size: 1.25rem; font-weight: 700; color: #1a1a2e; margin: 0 0 4px;">Kwasi Owusu-Asomaning</h3>
+          <p style="margin: 0 0 12px; font-size: 0.85rem; font-weight: 600; color: #e84a90; text-transform: uppercase; letter-spacing: 1px;">Digital Transformation &mdash; Business Agility Specialist</p>
+          <p style="margin: 0 0 16px; font-size: 0.9rem; color: #555; line-height: 1.6;">People-oriented with a business brain</p>
+          <a href="https://www.linkedin.com/in/kwasiowusuasomaning/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #0a66c2; text-decoration: none; font-weight: 600; transition: opacity 0.2s;"
+            onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+            <img src="images/linkedinlogo_blue.png" width="16" height="16" alt="LinkedIn"> Connect
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
+  <!-- Testimonials -->
+  <section style="background: #1a1a2e; padding: 80px 24px;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div class="mc-reveal" style="text-align: center; margin-bottom: 56px;">
+        <h2 style="font-family: 'Bai Jamjuree', sans-serif; font-size: 2rem; font-weight: 700; color: #fff; margin: 0 0 12px;">What People Say</h2>
+        <p style="color: #aaa; font-size: 1rem; max-width: 480px; margin: 0 auto; line-height: 1.7;">Don't take our word for it — hear from the people we've worked with.</p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+
+        <!-- Testimonial 1 — Team -->
+        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative;">
+          <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #e84a90; opacity: 0.4; margin-bottom: 12px;"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+          <p style="margin: 0 0 20px; color: #ddd; font-size: 0.9rem; line-height: 1.7; font-style: italic;">"This team were brought in to help improve and de-risk a complex development program. They very quickly grasped the key challenges and root causes and provided clear solutions."</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #e84a90, #c0356e); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">EL</div>
+            <div>
+              <p style="margin: 0; font-weight: 700; color: #fff; font-size: 0.85rem;">Dr Erik Lenhard</p>
+              <p style="margin: 2px 0 0; color: #aaa; font-size: 0.78rem;">Boston Consulting Group (BCG)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 — Team -->
+        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative;">
+          <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #e84a90; opacity: 0.4; margin-bottom: 12px;"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+          <p style="margin: 0 0 20px; color: #ddd; font-size: 0.9rem; line-height: 1.7; font-style: italic;">"Guided professionals across 29 diverse countries in Europe and Africa, this team effortlessly bridged cultural differences, turning them into strengths rather than obstacles."</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #e84a90, #c0356e); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">DS</div>
+            <div>
+              <p style="margin: 0; font-weight: 700; color: #fff; font-size: 0.85rem;">Dimitris Stathopoulos</p>
+              <p style="margin: 2px 0 0; color: #aaa; font-size: 0.78rem;">Coca-Cola Hellenic Bottling Company</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 — Team -->
+        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative;">
+          <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #e84a90; opacity: 0.4; margin-bottom: 12px;"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+          <p style="margin: 0 0 20px; color: #ddd; font-size: 0.9rem; line-height: 1.7; font-style: italic;">"These guys facilitated an amazing retrospective and tailored agile training for the entire executive division as part of our learning."</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #e84a90, #c0356e); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">RJ</div>
+            <div>
+              <p style="margin: 0; font-weight: 700; color: #fff; font-size: 0.85rem;">Robin Jeffery</p>
+              <p style="margin: 2px 0 0; color: #aaa; font-size: 0.78rem;">Hampshire Trust Bank</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 — Vitor -->
+        <div class="mc-reveal mc-reveal-delay-1" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative;">
+          <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #e84a90; opacity: 0.4; margin-bottom: 12px;"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+          <p style="margin: 0 0 20px; color: #ddd; font-size: 0.9rem; line-height: 1.7; font-style: italic;">"Vit is a superb Scrum Master and Agile Coach who would be an asset to any company. His affable personality, passion, expertise and willingness to put the needs of others first meant teams stopped 'doing' Agile and started 'being' Agile. If you are looking for an Agile coach then look no further."</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #e84a90, #c0356e); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">RC</div>
+            <div>
+              <p style="margin: 0; font-weight: 700; color: #fff; font-size: 0.85rem;">Rhos Chappelle</p>
+              <p style="margin: 2px 0 0; color: #aaa; font-size: 0.78rem;">Delivering Business Value through Digital Innovation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 — Kwasi -->
+        <div class="mc-reveal mc-reveal-delay-2" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative;">
+          <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #e84a90; opacity: 0.4; margin-bottom: 12px;"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+          <p style="margin: 0 0 20px; color: #ddd; font-size: 0.9rem; line-height: 1.7; font-style: italic;">"Kwasi is one of the most passionate, enthusiastic, positive people I have ever met. He is an agile evangelist but he always balances his beliefs against real life and pragmatism, focussing always on the outcome, not just the method."</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #e84a90, #c0356e); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">GJ</div>
+            <div>
+              <p style="margin: 0; font-weight: 700; color: #fff; font-size: 0.85rem;">Gary Jarvis</p>
+              <p style="margin: 2px 0 0; color: #aaa; font-size: 0.78rem;">Chief Product Officer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 6 — Kwasi -->
+        <div class="mc-reveal mc-reveal-delay-3" style="flex: 1; min-width: 300px; max-width: 340px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 28px 24px; position: relative;">
+          <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #e84a90; opacity: 0.4; margin-bottom: 12px;"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+          <p style="margin: 0 0 20px; color: #ddd; font-size: 0.9rem; line-height: 1.7; font-style: italic;">"I had the pleasure of working with Kwasi during our conversion from waterfall to agile. The strength and depth of his knowledge and expertise in all things Agile is vast. He has the ability to communicate across all levels and is tireless in assisting teams in getting to where they want to be."</p>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #e84a90, #c0356e); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.85rem; flex-shrink: 0;">CP</div>
+            <div>
+              <p style="margin: 0; font-weight: 700; color: #fff; font-size: 0.85rem;">Claire Price</p>
+              <p style="margin: 2px 0 0; color: #aaa; font-size: 0.78rem;">Business Analyst Manager — Finance and Compliance</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section style="background: #f7f7fb; padding: 80px 24px;">
     <div style="max-width: 720px; margin: 0 auto;">
@@ -874,7 +955,7 @@
 
       <div class="mc-faq-list">
 
-        <details style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
           <summary style="font-weight: 700; color: #1a1a2e; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             How long does a typical engagement take?
             <span style="font-size: 1.4rem; color: #e84a90; flex-shrink: 0; margin-left: 12px;">+</span>
@@ -882,7 +963,7 @@
           <p style="margin: 14px 0 0; color: #555; font-size: 0.9rem; line-height: 1.7;">Engagements range from a focused 4-week sprint to multi-year transformation partnerships. We always start with a discovery session to scope the right approach for your situation.</p>
         </details>
 
-        <details style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
           <summary style="font-weight: 700; color: #1a1a2e; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             Do you work remotely or on-site?
             <span style="font-size: 1.4rem; color: #e84a90; flex-shrink: 0; margin-left: 12px;">+</span>
@@ -890,7 +971,7 @@
           <p style="margin: 14px 0 0; color: #555; font-size: 0.9rem; line-height: 1.7;">Both. We are fully remote-capable and have worked with clients across multiple continents. We also love getting on-site when the situation calls for it — real collaboration happens everywhere.</p>
         </details>
 
-        <details style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
           <summary style="font-weight: 700; color: #1a1a2e; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             Do you work with companies of all sizes?
             <span style="font-size: 1.4rem; color: #e84a90; flex-shrink: 0; margin-left: 12px;">+</span>
@@ -898,7 +979,7 @@
           <p style="margin: 14px 0 0; color: #555; font-size: 0.9rem; line-height: 1.7;">Yes. We work with startups finding product-market fit, mid-sized companies scaling their teams, and large enterprises navigating complex transformations. The approach adapts — the commitment doesn't.</p>
         </details>
 
-        <details style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
           <summary style="font-weight: 700; color: #1a1a2e; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             How do we get started?
             <span style="font-size: 1.4rem; color: #e84a90; flex-shrink: 0; margin-left: 12px;">+</span>
@@ -906,7 +987,7 @@
           <p style="margin: 14px 0 0; color: #555; font-size: 0.9rem; line-height: 1.7;">Simply reach out via our contact form or email. We'll schedule a no-obligation discovery call to understand your needs and see if we're the right fit for each other.</p>
         </details>
 
-        <details style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+        <details class="mc-reveal" style="background: #fff; border-radius: 12px; margin-bottom: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
           <summary style="font-weight: 700; color: #1a1a2e; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">
             What makes Minds Connected different?
             <span style="font-size: 1.4rem; color: #e84a90; flex-shrink: 0; margin-left: 12px;">+</span>
@@ -1185,6 +1266,26 @@
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
       });
+    })();
+  </script>
+
+  <!-- Scroll Reveal Observer -->
+  <script>
+    (function() {
+      var els = document.querySelectorAll('.mc-reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function(el) { el.classList.add('mc-visible'); });
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('mc-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      els.forEach(function(el) { observer.observe(el); });
     })();
   </script>
 
