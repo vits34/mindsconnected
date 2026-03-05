@@ -12,9 +12,9 @@ if "%MSG%"=="" set MSG=Update website
 
 git commit -m "%MSG%"
 
-git pull --rebase origin master
+git pull --rebase origin main
 
-git push origin master
+git push origin master:main
 
 echo.
 echo  Done! Your changes are live at https://vits34.github.io/mindsconnected/
