@@ -102,6 +102,42 @@
       .mc-header-tagline { display: none !important; }
     }
 
+    /* Mobile header fixes */
+    @media (max-width: 767px) {
+      /* Compact single-row header on mobile */
+      .u-header .u-sheet-1 {
+        min-height: 60px !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+        padding: 0 16px !important;
+      }
+      .u-header .u-image-1 {
+        margin: 0 !important;
+        flex-shrink: 0;
+      }
+      .u-header .u-menu-1 {
+        margin: 0 0 0 auto !important;
+        flex-shrink: 0;
+      }
+      /* Fix body padding to match compact mobile header */
+      body {
+        padding-top: 60px !important;
+      }
+    }
+    @media (max-width: 575px) {
+      .u-header .u-sheet-1 {
+        min-height: 60px !important;
+        padding: 0 12px !important;
+      }
+      .u-header .u-image-1 {
+        margin: 0 !important;
+      }
+      .u-header .u-menu-1 {
+        margin: 0 0 0 auto !important;
+      }
+    }
+
     /* Card Hover Effects */
     .mc-hover-lift {
       transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
