@@ -43,6 +43,15 @@
 
   <!-- Scroll Animations -->
   <style>
+    /* Prevent horizontal scroll on mobile */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    .u-body > * {
+      max-width: 100%;
+    }
+
     .mc-reveal {
       opacity: 0;
       transform: translateY(32px);
