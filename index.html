@@ -11,6 +11,7 @@
   <title>Minds Connected | Agile Coaching, OKR & Strategic Planning</title>
   <link rel="stylesheet" href="css/nicepage.css">
   <link rel="stylesheet" href="css/Home-1.css">
+  <link rel="stylesheet" href="css/mc-header.css">
 
   <script class="u-script" type="text/javascript" src="js/jquery-1.9.1.min.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="js/nicepage.js" defer=""></script>
@@ -66,26 +67,7 @@
     .mc-reveal-delay-3 { transition-delay: 0.3s; }
     .mc-reveal-delay-4 { transition-delay: 0.35s; }
 
-    /* Sticky Header */
-    .u-header {
-      position: fixed !important;
-      top: 0; left: 0; right: 0;
-      z-index: 10000;
-      background: rgba(255,255,255,0.97) !important;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-      transition: box-shadow 0.35s;
-    }
-    .u-header .u-nav-link,
-    .u-header .u-nav-link:hover,
-    .u-header .u-nav-link:focus {
-      color: #1a1a2e !important;
-    }
-    .u-header .u-nav-link:hover {
-      color: #e84a90 !important;
-    }
-    .u-header.mc-scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.12); }
-    .u-header.mc-scrolled .u-sheet-1 { min-height: auto !important; }
-    body { padding-top: 80px; }
+    body { padding-top: 72px; }
 
     /* FAQ Animation */
     .mc-faq-list details summary span:last-child {
@@ -112,63 +94,6 @@
       margin: 0;
       opacity: 0.5;
     }
-    /* Header centered tagline */
-    .u-sheet-1 { position: relative; }
-    @media (max-width: 1199px) {
-      .mc-header-tagline { display: none !important; }
-    }
-
-    /* Mobile header fixes */
-    @media (max-width: 767px) {
-      /* Compact single-row header on mobile */
-      .u-header .u-sheet-1 {
-        min-height: 72px !important;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        flex-wrap: nowrap !important;
-        padding: 0 16px !important;
-        justify-content: space-between !important;
-      }
-      .u-header .u-sheet-1::after {
-        display: none !important;
-      }
-      .u-header .u-image-1 {
-        margin: 0 !important;
-        flex-shrink: 0 !important;
-      }
-      .u-header .mc-header-tagline {
-        display: none !important;
-      }
-      /* Hide text beside logo on mobile — logo image is enough */
-      .u-header .mc-header-text {
-        display: none !important;
-      }
-      .u-header .u-menu-1 {
-        margin: 0 0 0 auto !important;
-        flex-shrink: 0 !important;
-      }
-      /* Fix body padding to match compact mobile header */
-      body {
-        padding-top: 72px !important;
-      }
-    }
-    @media (max-width: 575px) {
-      .u-header .u-sheet-1 {
-        min-height: 72px !important;
-        flex-direction: row !important;
-        padding: 0 12px !important;
-        justify-content: space-between !important;
-      }
-      .u-header .u-image-1 {
-        margin: 0 !important;
-        flex-shrink: 0 !important;
-      }
-      .u-header .u-menu-1 {
-        margin: 0 0 0 auto !important;
-        flex-shrink: 0 !important;
-      }
-    }
 
     /* Card Hover Effects */
     .mc-hover-lift {
@@ -177,14 +102,6 @@
     .mc-hover-lift:hover {
       transform: translateY(-6px);
       box-shadow: 0 12px 36px rgba(0,0,0,0.12);
-    }
-
-    /* Mobile header fixes */
-    @media (max-width: 767px) {
-      .u-header .u-logo-image-1 {
-        height: 38px;
-        width: auto;
-      }
     }
   </style>
   <meta property="og:title" content="Minds Connected | Agile Coaching, OKR & Strategic Planning">
@@ -200,78 +117,20 @@
 </head>
 
 <body class="u-body u-xl-mode">
-  <header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-header" id="sec-dd13">
-    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-      <a href="#home" class="u-image u-logo u-image-1" data-image-width="80" data-image-height="40" aria-label="Minds Connected — back to top" style="display: inline-flex; align-items: center; gap: 12px; text-decoration: none;">
-        <img src="images/default-logo.png" class="u-logo-image u-logo-image-1" alt="Minds Connected logo">
-        <span class="mc-header-text" style="opacity: 0; transition: opacity 0.35s; pointer-events: none; white-space: nowrap;">
-          <span style="font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem; font-weight: 700; color: #1a1a2e;">Minds Connected</span>
-          <span style="font-family: 'Open Sans', sans-serif; font-size: 0.72rem; color: #888; display: block; margin-top: -2px; letter-spacing: 0.5px;">Co-creating with you</span>
-        </span>
-      </a>
-
-      <div class="mc-header-tagline" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center; pointer-events: none; white-space: nowrap;">
-        <span style="font-family: 'Bai Jamjuree', sans-serif; font-size: 1.05rem; font-weight: 700; color: #1a1a2e; letter-spacing: 0.4px; text-transform: uppercase;">Agile Coaching, OKR &amp; Strategic Planning</span>
-      </div>
-
-      <nav class="u-align-left u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="XL">
-        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 500;">
-          <a class="u-button-style u-custom-active-color u-custom-border u-custom-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link"
-            href="#">
-            <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 302 302" style="">
-              <use xlink:href="#svg-8a8f"></use>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-              id="svg-8a8f" x="0px" y="0px" viewBox="0 0 302 302" style="enable-background:new 0 0 302 302;"
-              xml:space="preserve" class="u-svg-content">
-              <g>
-                <rect y="36" width="302" height="30"></rect>
-                <rect y="236" width="302" height="30"></rect>
-                <rect y="136" width="302" height="30"></rect>
-              </g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-              <g></g>
-            </svg>
-          </a>
-        </div>
-        <div class="u-custom-menu u-nav-container">
-          <ul class="u-nav u-spacing-2 u-unstyled u-nav-1">
-            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#services" style="padding: 10px 16px;">Services</a></li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#team" style="padding: 10px 16px;">Team</a></li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/blog/" style="padding: 10px 16px;">Blog</a></li>
-            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#contact" style="padding: 10px 16px;">Contact</a></li>
-          </ul>
-        </div>
-        <div class="u-custom-menu u-nav-container-collapse">
-          <div
-            class="u-align-center u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-            <div class="u-inner-container-layout u-sidenav-overflow">
-              <div class="u-menu-close"></div>
-              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#services" style="padding: 10px 20px;">Services</a></li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#team" style="padding: 10px 20px;">Team</a></li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="/blog/" style="padding: 10px 20px;">Blog</a></li>
-                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#contact" style="padding: 10px 20px;">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-        </div>
-      </nav>
-    </div>
+  <header class="mc-header">
+    <a href="/" class="mc-logo">
+      <img src="images/default-logo.png" alt="Minds Connected logo">
+      <span>Minds Connected</span>
+    </a>
+    <nav class="mc-nav" id="mc-nav">
+      <a href="/#services">Services</a>
+      <a href="/#team">Team</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <button class="mc-hamburger" id="mc-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
   <main>
   <section class="u-clearfix u-image u-shading u-section-1" id="home">
@@ -1245,21 +1104,23 @@
     })();
   </script>
 
-  <!-- Sticky Header -->
+  <!-- Shared Header: hamburger + active nav -->
   <script>
     (function() {
-      var header = document.querySelector('.u-header');
-      var headerText = document.querySelector('.mc-header-text');
-      if (!header) return;
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 60) {
-          header.classList.add('mc-scrolled');
-          if (headerText) headerText.style.opacity = '1';
-        } else {
-          header.classList.remove('mc-scrolled');
-          if (headerText) headerText.style.opacity = '0';
-        }
-      }, { passive: true });
+      var ham = document.getElementById('mc-hamburger');
+      var nav = document.getElementById('mc-nav');
+      if (ham && nav) {
+        ham.addEventListener('click', function() {
+          ham.classList.toggle('open');
+          nav.classList.toggle('open');
+        });
+        nav.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            ham.classList.remove('open');
+            nav.classList.remove('open');
+          });
+        });
+      }
     })();
   </script>
 

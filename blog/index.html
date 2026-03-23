@@ -6,40 +6,13 @@
   <title>Blog | Minds Connected</title>
   <meta name="description" content="Insights on Agile, OKRs, leadership, and business transformation from the Minds Connected team.">
   <link rel="stylesheet" href="../css/nicepage.css">
-  <link rel="stylesheet" href="../css/Home-1.css">
+  <link rel="stylesheet" href="../css/mc-header.css">
   <link rel="icon" type="image/png" href="../images/default-logo.png">
   <link id="u-theme-google-font" rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Bai+Jamjuree:400,500,600,700">
   <style>
     html, body { overflow-x: hidden; max-width: 100%; margin: 0; padding: 0; }
     body { background: #f7f7fb; font-family: 'Open Sans', sans-serif; padding-top: 72px; }
-
-    /* Header */
-    .mc-header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 10000;
-      background: rgba(255,255,255,0.97);
-      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-      height: 72px;
-      display: flex; align-items: center;
-      padding: 0 32px;
-    }
-    .mc-header a.logo {
-      display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
-    }
-    .mc-header a.logo img { height: 38px; width: auto; }
-    .mc-header a.logo span {
-      font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem;
-      font-weight: 700; color: #1a1a2e; white-space: nowrap;
-    }
-    .mc-header nav { margin-left: auto; display: flex; gap: 4px; }
-    .mc-header nav a {
-      font-family: 'Open Sans', sans-serif; font-size: 0.875rem;
-      font-weight: 600; color: #1a1a2e; text-decoration: none;
-      padding: 8px 14px; border-radius: 6px;
-      transition: background 0.2s, color 0.2s;
-    }
-    .mc-header nav a:hover { background: #f0f0f8; color: #e84a90; }
-    .mc-header nav a.active { color: #e84a90; }
 
     /* Hero */
     .mc-blog-hero {
@@ -133,16 +106,19 @@
 <body>
 
   <header class="mc-header">
-    <a href="/" class="logo">
+    <a href="/" class="mc-logo">
       <img src="../images/default-logo.png" alt="Minds Connected logo">
       <span>Minds Connected</span>
     </a>
-    <nav>
+    <nav class="mc-nav" id="mc-nav">
       <a href="/#services">Services</a>
       <a href="/#team">Team</a>
       <a href="/blog/" class="active">Blog</a>
       <a href="/#contact">Contact</a>
     </nav>
+    <button class="mc-hamburger" id="mc-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
   <div class="mc-blog-hero">
@@ -193,6 +169,25 @@
         .catch(function () {
           grid.innerHTML = '<p class="mc-empty">Could not load posts. Please try again later.</p>';
         });
+    })();
+  </script>
+
+  <script>
+    (function() {
+      var ham = document.getElementById('mc-hamburger');
+      var nav = document.getElementById('mc-nav');
+      if (ham && nav) {
+        ham.addEventListener('click', function() {
+          ham.classList.toggle('open');
+          nav.classList.toggle('open');
+        });
+        nav.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            ham.classList.remove('open');
+            nav.classList.remove('open');
+          });
+        });
+      }
     })();
   </script>
 
