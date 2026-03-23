@@ -15,88 +15,88 @@
 
     /* Article layout */
     .mc-article-wrap {
-      max-width: 740px; margin: 0 auto; padding: 56px 24px 80px;
+      max-width: 680px; margin: 0 auto; padding: 40px 24px 72px;
     }
 
     /* Back link */
     .mc-back {
       display: inline-flex; align-items: center; gap: 6px;
-      font-size: 0.85rem; font-weight: 600; color: #e84a90;
-      text-decoration: none; margin-bottom: 36px;
+      font-size: 0.8rem; font-weight: 600; color: #e84a90;
+      text-decoration: none; margin-bottom: 28px;
       transition: gap 0.2s;
     }
     .mc-back:hover { gap: 10px; }
 
     /* Tags */
-    .mc-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .mc-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
     .mc-tag {
-      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.6px; color: #e84a90;
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; color: #e84a90;
       background: rgba(232,74,144,0.08);
-      padding: 3px 10px; border-radius: 20px;
+      padding: 3px 9px; border-radius: 20px;
     }
 
     /* Title */
     .mc-article-title {
       font-family: 'Bai Jamjuree', sans-serif;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-size: clamp(1.25rem, 2.4vw, 1.6rem);
       font-weight: 700; color: #1a1a2e;
-      margin: 0 0 16px; line-height: 1.25;
+      margin: 0 0 12px; line-height: 1.3;
     }
 
     /* Meta */
     .mc-meta {
-      font-size: 0.85rem; color: #999;
-      margin-bottom: 36px; display: flex; gap: 16px; flex-wrap: wrap;
+      font-size: 0.8rem; color: #aaa;
+      margin-bottom: 24px; display: flex; gap: 14px; flex-wrap: wrap;
     }
 
     /* Divider */
     .mc-rule {
-      height: 4px; border: none; margin: 0 0 40px;
+      height: 3px; border: none; margin: 0 0 32px;
       background: linear-gradient(90deg, #e84a90, #7b5ea7, transparent);
       border-radius: 2px;
     }
 
     /* Content typography */
-    .mc-content { color: #333; line-height: 1.85; font-size: 1.02rem; }
+    .mc-content { color: #444; line-height: 1.8; font-size: 0.97rem; }
     .mc-content h2 {
       font-family: 'Bai Jamjuree', sans-serif;
-      font-size: 1.4rem; font-weight: 700;
-      color: #1a1a2e; margin: 2.2em 0 0.7em;
+      font-size: 1.15rem; font-weight: 700;
+      color: #1a1a2e; margin: 2em 0 0.6em;
     }
-    .mc-content p { margin: 0 0 1.4em; }
+    .mc-content p { margin: 0 0 1.3em; }
     .mc-content ul, .mc-content ol {
-      margin: 0 0 1.4em; padding-left: 1.4em;
+      margin: 0 0 1.3em; padding-left: 1.4em;
     }
-    .mc-content li { margin-bottom: 0.4em; }
+    .mc-content li { margin-bottom: 0.35em; }
     .mc-content a { color: #e84a90; text-decoration: underline; }
     .mc-content a:hover { color: #c0356e; }
     .mc-content strong { color: #1a1a2e; }
     .mc-content em { font-style: italic; }
     .mc-content blockquote {
-      border-left: 4px solid #e84a90;
-      margin: 1.6em 0; padding: 12px 20px;
-      background: rgba(232,74,144,0.05);
+      border-left: 3px solid #e84a90;
+      margin: 1.4em 0; padding: 10px 18px;
+      background: rgba(232,74,144,0.04);
       border-radius: 0 8px 8px 0;
-      font-style: italic; color: #555;
+      font-style: italic; color: #666;
     }
 
     /* CTA */
     .mc-post-cta {
-      margin-top: 56px; padding: 40px;
+      margin-top: 48px; padding: 32px;
       background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 100%);
-      border-radius: 16px; text-align: center;
+      border-radius: 14px; text-align: center;
     }
     .mc-post-cta p {
-      font-size: 1.05rem; color: #ccc; margin: 0 0 20px; line-height: 1.6;
+      font-size: 0.95rem; color: #bbb; margin: 0 0 18px; line-height: 1.6;
     }
     .mc-post-cta a {
       display: inline-block;
       background: linear-gradient(135deg, #e84a90, #c0356e);
       color: #fff; text-decoration: none;
       font-family: 'Bai Jamjuree', sans-serif;
-      font-size: 0.95rem; font-weight: 700;
-      padding: 14px 36px; border-radius: 50px;
+      font-size: 0.875rem; font-weight: 700;
+      padding: 12px 30px; border-radius: 50px;
       transition: transform 0.2s;
     }
     .mc-post-cta a:hover { transform: scale(1.04); }
@@ -104,20 +104,19 @@
     /* Footer */
     .mc-footer {
       background: #1a1a2e; color: #aaa;
-      text-align: center; padding: 32px 24px;
-      font-size: 0.8rem;
+      text-align: center; padding: 28px 24px;
+      font-size: 0.78rem;
     }
     .mc-footer a { color: #e84a90; text-decoration: none; }
 
     /* Loading / error */
     .mc-state {
       text-align: center; padding: 80px 24px;
-      color: #999; font-size: 1rem;
+      color: #999; font-size: 0.95rem;
     }
 
     @media (max-width: 600px) {
-      .mc-header { padding: 0 16px; }
-      .mc-header nav a { padding: 8px 10px; font-size: 0.8rem; }
+      .mc-article-wrap { padding: 28px 18px 56px; }
       .mc-post-cta { padding: 28px 20px; }
     }
   </style>
