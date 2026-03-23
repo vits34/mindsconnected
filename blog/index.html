@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 16px; scroll-behavior: smooth;">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Minds Connected</title>
+  <meta name="description" content="Insights on Agile, OKRs, leadership, and business transformation from the Minds Connected team.">
+  <link rel="stylesheet" href="../css/nicepage.css">
+  <link rel="stylesheet" href="../css/Home-1.css">
+  <link rel="icon" type="image/png" href="../images/default-logo.png">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Bai+Jamjuree:400,500,600,700">
+  <style>
+    html, body { overflow-x: hidden; max-width: 100%; margin: 0; padding: 0; }
+    body { background: #f7f7fb; font-family: 'Open Sans', sans-serif; padding-top: 72px; }
+
+    /* Header */
+    .mc-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 10000;
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      height: 72px;
+      display: flex; align-items: center;
+      padding: 0 32px;
+    }
+    .mc-header a.logo {
+      display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
+    }
+    .mc-header a.logo img { height: 38px; width: auto; }
+    .mc-header a.logo span {
+      font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem;
+      font-weight: 700; color: #1a1a2e; white-space: nowrap;
+    }
+    .mc-header nav { margin-left: auto; display: flex; gap: 4px; }
+    .mc-header nav a {
+      font-family: 'Open Sans', sans-serif; font-size: 0.875rem;
+      font-weight: 600; color: #1a1a2e; text-decoration: none;
+      padding: 8px 14px; border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .mc-header nav a:hover { background: #f0f0f8; color: #e84a90; }
+    .mc-header nav a.active { color: #e84a90; }
+
+    /* Hero */
+    .mc-blog-hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 100%);
+      padding: 72px 24px 56px;
+      text-align: center;
+    }
+    .mc-blog-hero h1 {
+      font-family: 'Bai Jamjuree', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700; color: #fff; margin: 0 0 16px;
+    }
+    .mc-blog-hero p {
+      font-size: 1.05rem; color: #aaa; max-width: 540px;
+      margin: 0 auto; line-height: 1.7;
+    }
+
+    /* Grid */
+    .mc-blog-grid {
+      max-width: 1060px; margin: 0 auto;
+      padding: 56px 24px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    /* Card */
+    .mc-card {
+      background: #fff; border-radius: 14px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      overflow: hidden; display: flex; flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1),
+                  box-shadow 0.3s cubic-bezier(0.22,1,0.36,1);
+      text-decoration: none; color: inherit;
+    }
+    .mc-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .mc-card-accent {
+      height: 5px;
+      background: linear-gradient(90deg, #e84a90, #7b5ea7);
+    }
+    .mc-card-body { padding: 28px 28px 24px; flex: 1; display: flex; flex-direction: column; }
+    .mc-card-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .mc-card-tag {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.6px; color: #e84a90;
+      background: rgba(232,74,144,0.08);
+      padding: 3px 10px; border-radius: 20px;
+    }
+    .mc-card-title {
+      font-family: 'Bai Jamjuree', sans-serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: #1a1a2e; margin: 0 0 12px; line-height: 1.4;
+    }
+    .mc-card-excerpt {
+      font-size: 0.875rem; color: #666;
+      line-height: 1.7; flex: 1; margin: 0 0 20px;
+    }
+    .mc-card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid #f0f0f0; padding-top: 16px;
+      font-size: 0.8rem; color: #999;
+    }
+    .mc-card-read {
+      font-size: 0.8rem; font-weight: 700; color: #e84a90;
+      letter-spacing: 0.3px;
+    }
+
+    /* Empty state */
+    .mc-empty {
+      text-align: center; padding: 80px 24px; color: #999;
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    .mc-footer {
+      background: #1a1a2e; color: #aaa;
+      text-align: center; padding: 32px 24px;
+      font-size: 0.8rem;
+    }
+    .mc-footer a { color: #e84a90; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .mc-header { padding: 0 16px; }
+      .mc-header nav a { padding: 8px 10px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="mc-header">
+    <a href="/" class="logo">
+      <img src="../images/default-logo.png" alt="Minds Connected logo">
+      <span>Minds Connected</span>
+    </a>
+    <nav>
+      <a href="/#services">Services</a>
+      <a href="/#team">Team</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="mc-blog-hero">
+    <h1>Insights &amp; Ideas</h1>
+    <p>Thoughts on Agile, OKRs, leadership, and building companies people love to work in.</p>
+  </div>
+
+  <div class="mc-blog-grid" id="posts-grid">
+    <p class="mc-empty">Loading posts…</p>
+  </div>
+
+  <footer class="mc-footer">
+    <p>&copy; 2026 Minds Connected &nbsp;|&nbsp; <a href="/">Back to main site</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      var grid = document.getElementById('posts-grid');
+
+      fetch('posts.json')
+        .then(function (r) { return r.json(); })
+        .then(function (posts) {
+          if (!posts.length) {
+            grid.innerHTML = '<p class="mc-empty">No posts yet — check back soon.</p>';
+            return;
+          }
+          grid.innerHTML = posts.map(function (p) {
+            var date = new Date(p.date).toLocaleDateString('en-GB', {
+              day: 'numeric', month: 'long', year: 'numeric'
+            });
+            var tags = (p.tags || []).map(function (t) {
+              return '<span class="mc-card-tag">' + t + '</span>';
+            }).join('');
+            return '<a class="mc-card" href="post.html?slug=' + encodeURIComponent(p.slug) + '">'
+              + '<div class="mc-card-accent"></div>'
+              + '<div class="mc-card-body">'
+              + (tags ? '<div class="mc-card-tags">' + tags + '</div>' : '')
+              + '<h2 class="mc-card-title">' + p.title + '</h2>'
+              + '<p class="mc-card-excerpt">' + p.excerpt + '</p>'
+              + '<div class="mc-card-footer">'
+              + '<span>' + date + '</span>'
+              + '<span class="mc-card-read">Read &rarr;</span>'
+              + '</div>'
+              + '</div>'
+              + '</a>';
+          }).join('');
+        })
+        .catch(function () {
+          grid.innerHTML = '<p class="mc-empty">Could not load posts. Please try again later.</p>';
+        });
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 16px; scroll-behavior: smooth;">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Minds Connected</title>
+  <link rel="stylesheet" href="../css/nicepage.css">
+  <link rel="stylesheet" href="../css/Home-1.css">
+  <link rel="icon" type="image/png" href="../images/default-logo.png">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Bai+Jamjuree:400,500,600,700">
+  <style>
+    html, body { overflow-x: hidden; max-width: 100%; margin: 0; padding: 0; }
+    body { background: #f7f7fb; font-family: 'Open Sans', sans-serif; padding-top: 72px; }
+
+    /* Header */
+    .mc-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 10000;
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      height: 72px;
+      display: flex; align-items: center;
+      padding: 0 32px;
+    }
+    .mc-header a.logo {
+      display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
+    }
+    .mc-header a.logo img { height: 38px; width: auto; }
+    .mc-header a.logo span {
+      font-family: 'Bai Jamjuree', sans-serif; font-size: 1.1rem;
+      font-weight: 700; color: #1a1a2e; white-space: nowrap;
+    }
+    .mc-header nav { margin-left: auto; display: flex; gap: 4px; }
+    .mc-header nav a {
+      font-family: 'Open Sans', sans-serif; font-size: 0.875rem;
+      font-weight: 600; color: #1a1a2e; text-decoration: none;
+      padding: 8px 14px; border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .mc-header nav a:hover { background: #f0f0f8; color: #e84a90; }
+    .mc-header nav a.active { color: #e84a90; }
+
+    /* Article layout */
+    .mc-article-wrap {
+      max-width: 740px; margin: 0 auto; padding: 56px 24px 80px;
+    }
+
+    /* Back link */
+    .mc-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.85rem; font-weight: 600; color: #e84a90;
+      text-decoration: none; margin-bottom: 36px;
+      transition: gap 0.2s;
+    }
+    .mc-back:hover { gap: 10px; }
+
+    /* Tags */
+    .mc-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+    .mc-tag {
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.6px; color: #e84a90;
+      background: rgba(232,74,144,0.08);
+      padding: 3px 10px; border-radius: 20px;
+    }
+
+    /* Title */
+    .mc-article-title {
+      font-family: 'Bai Jamjuree', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700; color: #1a1a2e;
+      margin: 0 0 16px; line-height: 1.25;
+    }
+
+    /* Meta */
+    .mc-meta {
+      font-size: 0.85rem; color: #999;
+      margin-bottom: 36px; display: flex; gap: 16px; flex-wrap: wrap;
+    }
+
+    /* Divider */
+    .mc-rule {
+      height: 4px; border: none; margin: 0 0 40px;
+      background: linear-gradient(90deg, #e84a90, #7b5ea7, transparent);
+      border-radius: 2px;
+    }
+
+    /* Content typography */
+    .mc-content { color: #333; line-height: 1.85; font-size: 1.02rem; }
+    .mc-content h2 {
+      font-family: 'Bai Jamjuree', sans-serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: #1a1a2e; margin: 2.2em 0 0.7em;
+    }
+    .mc-content p { margin: 0 0 1.4em; }
+    .mc-content ul, .mc-content ol {
+      margin: 0 0 1.4em; padding-left: 1.4em;
+    }
+    .mc-content li { margin-bottom: 0.4em; }
+    .mc-content a { color: #e84a90; text-decoration: underline; }
+    .mc-content a:hover { color: #c0356e; }
+    .mc-content strong { color: #1a1a2e; }
+    .mc-content em { font-style: italic; }
+    .mc-content blockquote {
+      border-left: 4px solid #e84a90;
+      margin: 1.6em 0; padding: 12px 20px;
+      background: rgba(232,74,144,0.05);
+      border-radius: 0 8px 8px 0;
+      font-style: italic; color: #555;
+    }
+
+    /* CTA */
+    .mc-post-cta {
+      margin-top: 56px; padding: 40px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 100%);
+      border-radius: 16px; text-align: center;
+    }
+    .mc-post-cta p {
+      font-size: 1.05rem; color: #ccc; margin: 0 0 20px; line-height: 1.6;
+    }
+    .mc-post-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #e84a90, #c0356e);
+      color: #fff; text-decoration: none;
+      font-family: 'Bai Jamjuree', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      padding: 14px 36px; border-radius: 50px;
+      transition: transform 0.2s;
+    }
+    .mc-post-cta a:hover { transform: scale(1.04); }
+
+    /* Footer */
+    .mc-footer {
+      background: #1a1a2e; color: #aaa;
+      text-align: center; padding: 32px 24px;
+      font-size: 0.8rem;
+    }
+    .mc-footer a { color: #e84a90; text-decoration: none; }
+
+    /* Loading / error */
+    .mc-state {
+      text-align: center; padding: 80px 24px;
+      color: #999; font-size: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .mc-header { padding: 0 16px; }
+      .mc-header nav a { padding: 8px 10px; font-size: 0.8rem; }
+      .mc-post-cta { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="mc-header">
+    <a href="/" class="logo">
+      <img src="../images/default-logo.png" alt="Minds Connected logo">
+      <span>Minds Connected</span>
+    </a>
+    <nav>
+      <a href="/#services">Services</a>
+      <a href="/#team">Team</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="mc-article-wrap" id="article">
+    <p class="mc-state">Loading…</p>
+  </div>
+
+  <footer class="mc-footer">
+    <p>&copy; 2026 Minds Connected &nbsp;|&nbsp; <a href="/">Back to main site</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      var wrap = document.getElementById('article');
+      var params = new URLSearchParams(window.location.search);
+      var slug = params.get('slug');
+
+      if (!slug) {
+        wrap.innerHTML = '<p class="mc-state">Post not found. <a href="/blog/" style="color:#e84a90">Back to blog &rarr;</a></p>';
+        return;
+      }
+
+      fetch('posts.json')
+        .then(function (r) { return r.json(); })
+        .then(function (posts) {
+          var post = posts.find(function (p) { return p.slug === slug; });
+          if (!post) {
+            wrap.innerHTML = '<p class="mc-state">Post not found. <a href="/blog/" style="color:#e84a90">Back to blog &rarr;</a></p>';
+            return;
+          }
+
+          // Update page title & meta
+          document.title = post.title + ' | Minds Connected';
+          var metaDesc = document.createElement('meta');
+          metaDesc.name = 'description';
+          metaDesc.content = post.excerpt;
+          document.head.appendChild(metaDesc);
+
+          var date = new Date(post.date).toLocaleDateString('en-GB', {
+            day: 'numeric', month: 'long', year: 'numeric'
+          });
+          var tags = (post.tags || []).map(function (t) {
+            return '<span class="mc-tag">' + t + '</span>';
+          }).join('');
+
+          wrap.innerHTML =
+            '<a class="mc-back" href="/blog/">&larr; All posts</a>'
+            + (tags ? '<div class="mc-tags">' + tags + '</div>' : '')
+            + '<h1 class="mc-article-title">' + post.title + '</h1>'
+            + '<div class="mc-meta">'
+            + '<span>' + date + '</span>'
+            + (post.author ? '<span>by ' + post.author + '</span>' : '')
+            + '</div>'
+            + '<hr class="mc-rule">'
+            + '<div class="mc-content">' + post.content + '</div>'
+            + '<div class="mc-post-cta">'
+            + '<p>Want to apply these ideas in your organisation? We\'d love to help.</p>'
+            + '<a href="/#contact">Get in Touch</a>'
+            + '</div>';
+        })
+        .catch(function () {
+          wrap.innerHTML = '<p class="mc-state">Could not load post. <a href="/blog/" style="color:#e84a90">Back to blog &rarr;</a></p>';
+        });
+    })();
+  </script>
+
+</body>
+</html>
