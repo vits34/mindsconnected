@@ -121,7 +121,7 @@
         align-items: center !important;
         flex-wrap: nowrap !important;
         padding: 0 16px !important;
-        justify-content: flex-start !important;
+        justify-content: space-between !important;
       }
       .u-header .u-sheet-1::after {
         display: none !important;
@@ -131,6 +131,10 @@
         flex-shrink: 0 !important;
       }
       .u-header .mc-header-tagline {
+        display: none !important;
+      }
+      /* Hide text beside logo on mobile — logo image is enough */
+      .u-header .mc-header-text {
         display: none !important;
       }
       .u-header .u-menu-1 {
@@ -147,7 +151,7 @@
         min-height: 72px !important;
         flex-direction: row !important;
         padding: 0 12px !important;
-        justify-content: flex-start !important;
+        justify-content: space-between !important;
       }
       .u-header .u-image-1 {
         margin: 0 !important;
@@ -170,23 +174,9 @@
 
     /* Mobile header fixes */
     @media (max-width: 767px) {
-      .u-header .u-sheet-1 {
-        min-height: 72px !important;
-        padding: 0 20px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-      }
-      body { padding-top: 96px; }
       .u-header .u-logo-image-1 {
         height: 38px;
         width: auto;
-      }
-      .mc-header-text span:first-child {
-        font-size: 1.15rem !important;
-      }
-      .mc-header-text span:last-child {
-        font-size: 0.75rem !important;
       }
     }
   </style>
