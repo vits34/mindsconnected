@@ -71,12 +71,19 @@
       position: fixed !important;
       top: 0; left: 0; right: 0;
       z-index: 10000;
-      transition: background 0.35s, box-shadow 0.35s, padding 0.35s;
-    }
-    .u-header.mc-scrolled {
       background: rgba(255,255,255,0.97) !important;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.10);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      transition: box-shadow 0.35s;
     }
+    .u-header .u-nav-link,
+    .u-header .u-nav-link:hover,
+    .u-header .u-nav-link:focus {
+      color: #1a1a2e !important;
+    }
+    .u-header .u-nav-link:hover {
+      color: #e84a90 !important;
+    }
+    .u-header.mc-scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.12); }
     .u-header.mc-scrolled .u-sheet-1 { min-height: auto !important; }
     body { padding-top: 80px; }
 
