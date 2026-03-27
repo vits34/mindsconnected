@@ -97,6 +97,9 @@
   .mc-hamburger {
     display: flex;
   }
+  .mc-hamburger span {
+    background: #5b1a6e;
+  }
 
   .mc-header .mc-nav {
     display: none;
